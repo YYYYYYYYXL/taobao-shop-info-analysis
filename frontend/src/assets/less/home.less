@@ -1,0 +1,43 @@
+.home-wrapper{
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 10px;
+    // width: 98%;
+    .date-row{
+      width: 100%;
+      display: flex;
+      margin-bottom: 20px;
+      .data-col{
+        flex: 1;
+        margin-right: 20px;
+        &:last-child{
+          margin-right: 0;
+        }
+        .date-block{
+          display: flex;
+          align-items: center;
+          height: 120px;
+          .icon-box{
+            font-size: 40px;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            color: #fff;
+          }
+          .date-cont{
+            flex: 1;
+            text-align: center;
+            color: #515a6e;
+            .count{
+              line-height: 60px;
+              font-size: 35px;
+            }
+            .title{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+}

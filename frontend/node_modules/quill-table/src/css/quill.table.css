@@ -1,0 +1,286 @@
+.ql-editor table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ql-editor table td {
+    border: 1px solid black;
+    padding: 5px;
+    height: 25px;
+}
+
+.ql-formats button.ql-table::after,
+.ql-formats .ql-picker.ql-table .ql-picker-label::before {
+    content: " ";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ql-picker.ql-table .ql-picker-label::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABcSURBVEhL3YsxDgBACML8/6fvNhd0aGCyCUuBOsULR5hGToStSHl8oB4fqMcH6rtIRZhGToStSHl8oB4fqMcH6rtIRZhGToStSHl8oB4fqMcH6rtIRZhGTk5Q9QFCcv8BMZAsCwAAAABJRU5ErkJggg==');
+}
+
+button.ql-table[value="append-row"]::after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVEhL7ZNBCsIwFERzKxceQHGjqLcSFMHzKOpN1BOIe53BDgxJCjbRlX3woJnf/F9KEnq6MIE3+KyUPcYw4QpzG0q8wAQVa2nt0w8QfzpgCU/w0XiEc5ij84ANVC2WtRjVEuKLtoP8cs+EZzO4jbLsReP1ZkEvDeHZ1lR4doADW7PHCH4E/zc3tcHa/f1Yxs8H8LSwiRSe7RmUsoDeTHg2ZVDDGnpDdwW/Ao8iT4suGp+Z9dQSwgttSY+8S9IcOwAAAABJRU5ErkJggg==');
+}
+
+button.ql-table[value="append-col"] {
+    padding-top: 0;
+}
+
+button.ql-table[value="append-col"]::after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADXSURBVEhL3ZVLCsJADIbnVi48gOJGUW8lqCuPo6g3UU8g7vX/GQMhnUdmUZR+8MGQyaOUlIbBMYMP+K7InCls5g5TDVPeYDNSXMOb1+FvBuzhKB7b8A5Ywwt8fT3DJaziGbCDkmflXRFJzMEn1w0FHVswkMMWWq5QNxN07MRADlto4fsu3fPuGY9pfj6A2yI5Ok/HjgzksIWWFdTNBB2bM5DDFqbYQt1Qu4FFJLEGV5HbIh8az8X1FLwDDnAcj214B3jzOvQ+oPcfDn+DLEw11DJnAgdPCB8kS4+90nxt3AAAAABJRU5ErkJggg==');
+}
+
+.ql-table,
+.ql-contain {
+    width: auto !important;
+    margin-right: 0;
+}
+
+.ql-picker.ql-table {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.ql-picker.ql-table svg {
+    display: none;
+}
+
+.ql-picker.ql-table .ql-picker-label {
+    padding: 2px 3px;
+}
+
+.ql-picker.ql-table .ql-picker-options {
+    width: 178px;
+}
+
+.ql-picker.ql-table .ql-picker-item {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0px;
+    margin: 1px;
+}
+
+.ql-picker.ql-table .ql-picker-item {
+    border: 1px solid #444;
+    color: #444;
+}
+
+.ql-picker.ql-table .ql-picker-item:hover {
+    border-color: #06c;
+}
+
+.ql-picker-item:nth-child(5):before {
+    clear: both;
+    display: block;
+    content: "";
+    width: 100%;
+}
+
+.ql-picker-item[data-value=newtable_1_1]:before {
+    content: "1x1";
+}
+
+.ql-picker-item[data-value=newtable_1_2]:before {
+    content: "1x2";
+}
+
+.ql-picker-item[data-value=newtable_1_3]:before {
+    content: "1x3";
+}
+
+.ql-picker-item[data-value=newtable_1_4]:before {
+    content: "1x4";
+}
+
+.ql-picker-item[data-value=newtable_1_5]:before {
+    content: "1x5";
+}
+
+.ql-picker-item[data-value=newtable_2_1]:before {
+    content: "2x1";
+}
+
+.ql-picker-item[data-value=newtable_2_2]:before {
+    content: "2x2";
+}
+
+.ql-picker-item[data-value=newtable_2_3]:before {
+    content: "2x3";
+}
+
+.ql-picker-item[data-value=newtable_2_4]:before {
+    content: "2x4";
+}
+
+.ql-picker-item[data-value=newtable_2_5]:before {
+    content: "2x5";
+}
+
+.ql-picker-item[data-value=newtable_3_1]:before {
+    content: "3x1";
+}
+
+.ql-picker-item[data-value=newtable_3_2]:before {
+    content: "3x2";
+}
+
+.ql-picker-item[data-value=newtable_3_3]:before {
+    content: "3x3";
+}
+
+.ql-picker-item[data-value=newtable_3_4]:before {
+    content: "3x4";
+}
+
+.ql-picker-item[data-value=newtable_3_5]:before {
+    content: "3x5";
+}
+
+.ql-picker-item[data-value=newtable_4_1]:before {
+    content: "4x1";
+}
+
+.ql-picker-item[data-value=newtable_4_2]:before {
+    content: "4x2";
+}
+
+.ql-picker-item[data-value=newtable_4_3]:before {
+    content: "4x3";
+}
+
+.ql-picker-item[data-value=newtable_4_4]:before {
+    content: "4x4";
+}
+
+.ql-picker-item[data-value=newtable_4_5]:before {
+    content: "4x5";
+}
+
+.ql-picker-item[data-value=newtable_5_1]:before {
+    content: "5x1";
+}
+
+.ql-picker-item[data-value=newtable_5_2]:before {
+    content: "5x2";
+}
+
+.ql-picker-item[data-value=newtable_5_3]:before {
+    content: "5x3";
+}
+
+.ql-picker-item[data-value=newtable_5_4]:before {
+    content: "5x4";
+}
+
+.ql-picker-item[data-value=newtable_5_5]:before {
+    content: "5x5";
+}
+
+.ql-picker-item[data-value=newtable_6_1]:before {
+    content: "6x1";
+}
+
+.ql-picker-item[data-value=newtable_6_2]:before {
+    content: "6x2";
+}
+
+.ql-picker-item[data-value=newtable_6_3]:before {
+    content: "6x3";
+}
+
+.ql-picker-item[data-value=newtable_6_4]:before {
+    content: "6x4";
+}
+
+.ql-picker-item[data-value=newtable_6_5]:before {
+    content: "6x5";
+}
+
+.ql-picker-item[data-value=newtable_7_1]:before {
+    content: "7x1";
+}
+
+.ql-picker-item[data-value=newtable_7_2]:before {
+    content: "7x2";
+}
+
+.ql-picker-item[data-value=newtable_7_3]:before {
+    content: "7x3";
+}
+
+.ql-picker-item[data-value=newtable_7_4]:before {
+    content: "7x4";
+}
+
+.ql-picker-item[data-value=newtable_7_5]:before {
+    content: "7x5";
+}
+
+.ql-picker-item[data-value=newtable_8_1]:before {
+    content: "8x1";
+}
+
+.ql-picker-item[data-value=newtable_8_2]:before {
+    content: "8x2";
+}
+
+.ql-picker-item[data-value=newtable_8_3]:before {
+    content: "8x3";
+}
+
+.ql-picker-item[data-value=newtable_8_4]:before {
+    content: "8x4";
+}
+
+.ql-picker-item[data-value=newtable_8_5]:before {
+    content: "8x5";
+}
+
+.ql-picker-item[data-value=newtable_9_1]:before {
+    content: "9x1";
+}
+
+.ql-picker-item[data-value=newtable_9_2]:before {
+    content: "9x2";
+}
+
+.ql-picker-item[data-value=newtable_9_3]:before {
+    content: "9x3";
+}
+
+.ql-picker-item[data-value=newtable_9_4]:before {
+    content: "9x4";
+}
+
+.ql-picker-item[data-value=newtable_9_5]:before {
+    content: "9x5";
+}
+
+.ql-picker-item[data-value=newtable_10_1]:before {
+    content: "10x1";
+}
+
+.ql-picker-item[data-value=newtable_10_2]:before {
+    content: "10x2";
+}
+
+.ql-picker-item[data-value=newtable_10_3]:before {
+    content: "10x3";
+}
+
+.ql-picker-item[data-value=newtable_10_4]:before {
+    content: "10x4";
+}
+
+.ql-picker-item[data-value=newtable_10_5]:before {
+    content: "10x5";
+}
