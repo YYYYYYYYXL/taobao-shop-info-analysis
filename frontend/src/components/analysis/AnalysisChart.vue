@@ -29,7 +29,6 @@
             size="small"
             type="primary"
             icon="el-icon-check"
-            @click="saveChartConfig"
             title="保存图表配置"
         >
           保存
@@ -256,12 +255,10 @@ export default {
     handleChartTypeChange(newType) {
       this.currentChartType = newType
       // 可以在这里添加图表切换的动画效果或其他逻辑
-      console.log('图表类型切换为:', newType)
     },
     // 处理颜色变化
     handleColorChange(newColor) {
       this.currentColor = newColor
-      console.log('颜色切换为:', newColor)
     },
     // 获取默认颜色
     getDefaultColor() {

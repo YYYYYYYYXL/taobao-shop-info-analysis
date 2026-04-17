@@ -41,52 +41,6 @@
         </div>
       </div>
     </el-form>
-
-    <!--
-    <el-dialog
-      title=""
-      :visible.sync="inviteDialogVisible"
-      width="360px"
-      :close-on-click-modal="false"
-      :close-on-press-escape="false"
-      :show-close="false"
-      append-to-body
-      class="invite-dialog"
-    >
-      <div class="invite-content">
-        <div class="invite-icon-wrapper">
-          <div class="invite-icon">
-            <i class="el-icon-key"></i>
-          </div>
-        </div>
-        <h3 class="invite-title">邀请码验证</h3>
-        <p class="invite-tip">首次登录需要输入邀请码</p>
-        <el-input
-          v-model="inviteCodeInput"
-          placeholder="请输入邀请码"
-          prefix-icon="el-icon-lock"
-          @keyup.enter.native="handleInviteCodeSubmit"
-          class="invite-input"
-          clearable
-        ></el-input>
-        <div class="invite-error" v-if="inviteError">
-          <i class="el-icon-warning"></i>
-          {{ inviteError }}
-        </div>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button 
-          type="primary" 
-          @click="handleInviteCodeSubmit" 
-          :loading="inviteSubmitting"
-          class="invite-submit-btn"
-        >
-          <i class="el-icon-check" v-if="!inviteSubmitting"></i>
-          确定
-        </el-button>
-      </span>
-    </el-dialog>
-    -->
   </div>
 </template>
 
@@ -95,14 +49,6 @@ import ValidCode from "../components/Validate";
 import request from "@/utils/request";
 import { setRoutes } from "@/router";
 import logoImg from '@/assets/logo.png';
-/*
-import {
-  hasInviteCode,
-  validateInviteCode,
-  saveInviteCode,
-  isValidDate
-} from "@/utils/inviteCode";
-*/
 
 
 export default {
@@ -129,10 +75,6 @@ export default {
           { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
         ]
       },
-      /* inviteDialogVisible: false,
-      inviteCodeInput: '',
-      inviteError: '',
-      inviteSubmitting: false */
     };
   },
   created() {
@@ -145,57 +87,8 @@ export default {
     createValidCode(data) {
       this.validCode = data
     },
-    /*
-    checkInviteCode() {
-      if (!isValidDate()) {
-        this.$message.error('邀请日期已过期，无法登录');
-        this.inviteDialogVisible = false;
-        return;
-      }
-      
-      if (!hasInviteCode()) {
-        this.inviteDialogVisible = true;
-      }
-    },
-    handleInviteCodeSubmit() {
-      if (!this.inviteCodeInput || this.inviteCodeInput.trim() === '') {
-        this.inviteError = '请输入邀请码';
-        return;
-      }
-      
-      this.inviteSubmitting = true;
-      this.inviteError = '';
-      
-      const result = validateInviteCode(this.inviteCodeInput.trim());
-      
-      // 注意：validateInviteCode 返回的是 { v: boolean, m: string }
-      if (result.v) {
-        saveInviteCode(this.inviteCodeInput.trim());
-        this.$message.success('邀请码验证成功');
-        this.inviteDialogVisible = false;
-        this.inviteCodeInput = '';
-        this.inviteError = '';
-      } else {
-        this.inviteError = result.m;
-      }
-      
-      this.inviteSubmitting = false;
-    },
-    */
     onLogin() {
-      /*
-      if (!hasInviteCode()) {
-        this.inviteDialogVisible = true;
-        this.$message.warning('请先输入邀请码');
-        return;
-      }
-      
-      if (!isValidDate()) {
-        this.$message.error('邀请日期已过期，无法登录');
-        return;
-      }
-      
-      */
+
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           // 验证码比较时转换为小写，实现不区分大小写

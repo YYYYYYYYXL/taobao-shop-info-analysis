@@ -68,7 +68,7 @@ export default {
         },
         visualMap: {
           min: this.visualMapMin,
-          max: this.visualMapMax,
+          max: Math.max(...this.data.map(item => Number(item.value) || 0),0),
           left: '5%',
           top: '5%',
           text: ['高', '低'],

@@ -23,9 +23,6 @@
 
 export default {
   inject: ['userInfo'],
-  created() {
-    console.log(this.userInfo)
-  },
   name: 'UserAvatar',
   computed: {
     avatarUrl() {

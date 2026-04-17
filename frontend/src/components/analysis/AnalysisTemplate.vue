@@ -138,7 +138,7 @@ export default {
     },
     showFilter: {
       type: Boolean,
-      default: true
+      default: false
     },
     // 图表配置
     title: {
@@ -253,25 +253,6 @@ export default {
     this.searchForm.category = this.category
   },
   methods: {
-    /*
-    checkInviteCode() {
-      if (!isValidDate()) {
-        this.$message.error('邀请日期已过期，无法使用系统')
-        setTimeout(() => {
-          this.$router.push('/login')
-        }, 2000)
-        return
-      }
-      
-      if (!hasInviteCode()) {
-        this.$message.warning('请先验证邀请码')
-        setTimeout(() => {
-          this.$router.push('/login')
-        }, 2000)
-        return
-      }
-    },
-    */
     // 处理数据属性映射
     // process data mapping
     processDataMapping(rawData) {

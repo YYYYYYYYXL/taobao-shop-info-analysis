@@ -62,10 +62,6 @@
       this.refreshMenu()
     },
     methods: {
-      isFullscreenPage(item) {
-        if (!item) return false
-        return item.path === '/dashboard-fullscreen' || item.path === '/chat-fullscreen'
-      },
       getIconClass(iconKey) {
         if (!iconKey) return 'el-icon-menu'
         return getIconByKey(iconKey)
@@ -75,19 +71,6 @@
         localStorage.setItem('userMenuList', JSON.stringify(staticMenuList))
       },
       handleMenuSelect(index) {
-        const menuItem = this.findMenuItemByPath(this.userMenuList, index)
-
-        if (menuItem && this.isFullscreenPage(menuItem)) {
-          window.open(menuItem.path, '_blank')
-
-          this.$nextTick(() => {
-            if (this.$refs.menu) {
-              this.$refs.menu.activeIndex = this.$route.path
-            }
-          })
-          return false
-        }
-
         if (index && typeof index === 'string' && !/^\d+$/.test(index) && this.$route.path !== index)
   {
           this.$router.push(index).catch(err => {
@@ -97,18 +80,6 @@
           })
         }
       },
-      findMenuItemByPath(menuList, path) {
-        for (const item of menuList) {
-          if (item.path === path) {
-            return item
-          }
-          if (item.children && item.children.length > 0) {
-            const found = this.findMenuItemByPath(item.children, path)
-            if (found) return found
-          }
-        }
-        return null
-      }
     },
     watch: {
       $route(to) {
