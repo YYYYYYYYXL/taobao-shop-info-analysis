@@ -25,27 +25,7 @@
       </div>
     </section>
 
-    <section class="content-grid">
-      <el-card class="info-card" shadow="hover">
-        <h3>答辩主链路</h3>
-        <ol>
-          <li>读取原始淘宝商品数据并完成字段清洗。</li>
-          <li>将清洗后的 CSV 作为统一分析数据源。</li>
-          <li>按分类、省份、店铺、风格、款式、面料、版型生成分析结果。</li>
-          <li>通过前端图表页完成结果可视化展示。</li>
-        </ol>
-      </el-card>
 
-      <el-card class="info-card" shadow="hover">
-        <h3>本次瘦身结果</h3>
-        <ul>
-          <li>删除用户管理、头像上传、角色菜单和行为日志依赖。</li>
-          <li>后端只保留课程答辩需要的分析接口。</li>
-          <li>默认运行不依赖 MySQL，直接使用本地 CSV + SQLite 启动。</li>
-          <li>首页改为项目说明页，不再展示无关的后台统计卡片。</li>
-        </ul>
-      </el-card>
-    </section>
   </div>
 </template>
 
