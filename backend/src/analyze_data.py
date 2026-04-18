@@ -1,18 +1,5 @@
 import pandas as pd
 
-from .config import CLEANED_TABLE, get_engine
-
-
-def load_cleaned_data_from_db(table_name: str = CLEANED_TABLE) -> pd.DataFrame:
-    engine = get_engine()
-
-    query = f"SELECT * FROM {table_name}"
-    df = pd.read_sql(query, con=engine)
-
-    if df.empty:
-        raise ValueError(f"数据库表 {table_name} 中没有数据，无法进行分析")
-    return df
-
 
 def filter_sales_data(df, group_col):
     temp_df = df.dropna(subset=[group_col, "sales"]).copy()

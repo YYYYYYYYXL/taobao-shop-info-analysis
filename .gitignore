@@ -1,0 +1,62 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# Python 打包/缓存
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# 测试/覆盖率
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ===== Django =====
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.iml
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Node / Vue =====
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== 项目中的数据与临时文件（按需保留） =====
+*.log
+tmp/
+temp/
+
+# ===== 如不想提交数据文件可打开下面这行 =====
+# backend/data/*.csv

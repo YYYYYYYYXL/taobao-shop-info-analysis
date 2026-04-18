@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvue_mall"]=self["webpackChunkvue_mall"]||[]).push([[540],{47540:function(l,n,u){u.r(n),u.d(n,{default:function(){return f}});var t=function(){var l=this,n=l._self._c;return n("AnalysisConfig",{attrs:{title:"风格价格分析"}})},e=[],s=u(845),r={},a=(0,s.A)(r,t,e,!1,null,null,null),f=a.exports}}]);
-//# sourceMappingURL=540.f831e480.js.map

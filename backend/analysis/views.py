@@ -27,6 +27,30 @@ def api_response(data=None, code="0", msg="success", status=200):
     )
 
 
+@require_GET
+def api_index(request):
+    return api_response(
+        msg="taobao analysis backend is running",
+        data={
+            "service": "taobao-analysis-backend",
+            "endpoints": [
+                "/api/summary/",
+                "/api/analysis/province-sales",
+                "/api/analysis/shop-sales",
+                "/api/analysis/style-price",
+                "/api/analysis/pattern-price",
+                "/api/analysis/fabric-price",
+                "/api/analysis/fit-price",
+            ],
+        },
+    )
+
+
+@require_GET
+def favicon(request):
+    return JsonResponse({}, status=204)
+
+
 def load_analysis_results():
     df = pd.read_csv(DATA_FILE)
     return run_all_analysis(df)
