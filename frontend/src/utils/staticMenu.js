@@ -18,7 +18,7 @@ export const staticMenuList = [
         path: '/analysis-category-sales',
         pagePath: 'analysis/AnalysisCategorySales',
         icon: 'pie-chart',
-        apiUrl: '/summary/',
+        apiUrl: '/category-sales/',
         chartType: 'bar',
         chartColor: '#4a90e2',
         tableColumnName: '分类',

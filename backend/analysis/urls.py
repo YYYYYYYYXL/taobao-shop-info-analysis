@@ -7,12 +7,12 @@ from .views import (
     analysis_province_sales,
     analysis_shop_sales,
     analysis_style_price,
-    analysis_summary,
+    category_sales,
 )
 
 
 urlpatterns = [
-    path("summary/", analysis_summary),
+    path("category-sales/", category_sales),
     path("analysis/province-sales", analysis_province_sales),
     path("analysis/shop-sales", analysis_shop_sales),
     path("analysis/style-price", analysis_style_price),

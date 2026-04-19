@@ -20,8 +20,21 @@ RESULT_LIMITS = {
 
 
 def api_response(data=None, code="0", msg="success", status=200):
+    """ 
+        统一响应封装函数。作用是把所有接口都包装成同一种格式：
+        {
+            "code": "0",
+            "msg": "success",
+            "data": ...
+        }
+        这样前端拿数据时结构统一，不用每个接口单独适配。
+    """
     return JsonResponse(
-        {"code": code, "msg": msg, "data": data},
+        {
+            "code": code, 
+            "msg": msg, 
+            "data": data
+        },
         json_dumps_params={"ensure_ascii": False},
         status=status,
     )
@@ -29,12 +42,18 @@ def api_response(data=None, code="0", msg="success", status=200):
 
 @require_GET
 def api_index(request):
+    """ 
+        作用是访问根路径时返回一个说明信息，告诉你：
+        后端服务正在运行
+        当前有哪些分析接口可用
+        也就是你现在打开 127.0.0.1:8000/ 能看到的那个 JSON。
+    """
     return api_response(
         msg="taobao analysis backend is running",
         data={
             "service": "taobao-analysis-backend",
             "endpoints": [
-                "/api/summary/",
+                "/api/category-sales/",
                 "/api/analysis/province-sales",
                 "/api/analysis/shop-sales",
                 "/api/analysis/style-price",
@@ -48,10 +67,20 @@ def api_index(request):
 
 @require_GET
 def favicon(request):
+    """
+        只是为了处理浏览器自动请求 /favicon.ico，避免 404。
+        204 表示“请求成功，但没有内容”。
+    """
     return JsonResponse({}, status=204)
 
 
 def load_analysis_results():
+    """ 
+        读取 cleaned_data.csv
+        调用 run_all_analysis(df)
+        返回一整套分析结果
+        这里返回的不是 JSON，而是一个字典，里面每个值还是 DataFrame
+    """
     df = pd.read_csv(DATA_FILE)
     return run_all_analysis(df)
 
@@ -65,7 +94,7 @@ def build_chart_payload(result_key):
 
 
 @require_GET
-def analysis_summary(request):
+def category_sales(request):
     return api_response(data=build_chart_payload("category_sales"))
 
 

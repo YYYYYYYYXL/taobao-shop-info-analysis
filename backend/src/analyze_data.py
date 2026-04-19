@@ -2,9 +2,9 @@ import pandas as pd
 
 
 def filter_sales_data(df, group_col):
-    temp_df = df.dropna(subset=[group_col, "sales"]).copy()
-    temp_df = temp_df[temp_df["sales"] > 0]
-    return temp_df
+    temp_df = df.dropna(subset=[group_col, "sales"]).copy() 
+    temp_df = temp_df[temp_df["sales"] > 0]  
+    return temp_df 
 
 
 def filter_price_data(df, group_col, lower_quantile=0.01, upper_quantile=0.99):
@@ -29,7 +29,6 @@ def sales_analysis(df, group_col):
         .reset_index(drop=True)
     )
     return result
-
 
 def price_analysis(df, group_col):
     temp_df = filter_price_data(df, group_col)
