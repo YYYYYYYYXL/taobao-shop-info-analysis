@@ -8,6 +8,7 @@ from .views import (
     analysis_shop_sales,
     analysis_style_price,
     category_sales,
+    analysis_top_products_by_categories,
 )
 
 
@@ -19,4 +20,5 @@ urlpatterns = [
     path("analysis/pattern-price", analysis_pattern_price),
     path("analysis/fabric-price", analysis_fabric_price),
     path("analysis/fit-price", analysis_fit_price),
+    path("analysis/top-products-by-categories", analysis_top_products_by_categories)
 ]

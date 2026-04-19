@@ -6,6 +6,7 @@ from django.views.decorators.http import require_GET
 
 from src.analyze_data import run_all_analysis
 
+from src.analyze_data import top_products_for_top_categories
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "cleaned_data.csv"
 RESULT_LIMITS = {
@@ -126,3 +127,9 @@ def analysis_fabric_price(request):
 @require_GET
 def analysis_fit_price(request):
     return api_response(data=build_chart_payload("fit_price"))
+
+@require_GET
+def analysis_top_products_by_categories(request):
+    df = pd.read_csv(DATA_FILE, skipinitialspace=True)
+    data = top_products_for_top_categories(df, category_limit=10, product_limit=10)
+    return api_response(data=data)
