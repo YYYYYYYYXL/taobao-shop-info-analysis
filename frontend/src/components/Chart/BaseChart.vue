@@ -36,6 +36,7 @@ export default {
   },
   beforeDestroy() {
     if (this.chart) {
+      this.chart.off('click', this.handleChartClick)
       this.chart.dispose()
     }
     window.removeEventListener('resize', this.handleResize)
@@ -54,6 +55,10 @@ export default {
     initChart() {
       this.chart = echarts.init(this.$refs.chartRef, this.theme)
       this.chart.setOption(this.options)
+      this.chart.on('click', this.handleChartClick)
+    },
+    handleChartClick(params) {
+      this.$emit('chart-click', params)
     },
     handleResize() {
       if (this.chart) {

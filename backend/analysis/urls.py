@@ -7,6 +7,7 @@ from .views import (
     analysis_province_sales,
     analysis_shop_sales,
     analysis_style_price,
+    analysis_top_products_by_dimension,
     category_sales,
     analysis_top_products_by_categories,
 )
@@ -20,5 +21,6 @@ urlpatterns = [
     path("analysis/pattern-price", analysis_pattern_price),
     path("analysis/fabric-price", analysis_fabric_price),
     path("analysis/fit-price", analysis_fit_price),
-    path("analysis/top-products-by-categories", analysis_top_products_by_categories)
+    path("analysis/top-products-by-categories", analysis_top_products_by_categories),
+    path("analysis/top-products-by-dimension", analysis_top_products_by_dimension),
 ]

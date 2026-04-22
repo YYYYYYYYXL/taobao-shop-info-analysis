@@ -8,9 +8,6 @@
       <SideMenu ref="sideMenu" />
     </div>
     <div class="main-container">
-      <div class="main-header">
-        <HeaderBar />
-      </div>
       <div class="main-content">
         <router-view />
       </div>
@@ -19,16 +16,15 @@
 </template>
 
 <script>
-import HeaderBar from '../components/Header.vue'
 import SideMenu from '../components/Aside.vue'
 import logoImg from '../assets/logo.png'
 
 export default {
   name: 'AppLayout',
-  components: { HeaderBar, SideMenu },
+  components: { SideMenu },
   data() {
     return {
-      title: process.env.VUE_APP_TITLE || '淘宝商品分析答辩系统',
+      title: process.env.VUE_APP_TITLE || '淘宝商品信息分析',
       logoImg
     }
   }
@@ -97,20 +93,10 @@ export default {
     display: flex;
     flex-direction: column;
 
-    .main-header {
-      background: linear-gradient(180deg, #4a90e2 0%, #e8f4fd 100%);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      padding: 0 24px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
     .main-content {
       background: #f5f7fa;
-      min-height: calc(100vh - 70px);
-      max-height: calc(100vh - 70px);
+      min-height: 100vh;
+      max-height: 100vh;
       overflow-y: auto;
       overflow-x: hidden;
       padding: 20px;

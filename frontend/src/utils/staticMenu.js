@@ -58,7 +58,7 @@ export const staticMenuList = [
         pagePath: 'analysis/AnalysisStylePrice',
         icon: 'chart',
         apiUrl: '/analysis/style-price',
-        chartType: 'bar',
+        chartType: 'rose',
         chartColor: '#34a853',
         tableColumnName: '风格',
         tableColumnValueOne: '均价'
@@ -71,7 +71,7 @@ export const staticMenuList = [
         pagePath: 'analysis/AnalysisPatternPrice',
         icon: 'picture',
         apiUrl: '/analysis/pattern-price',
-        chartType: 'bar',
+        chartType: 'word-cloud',
         chartColor: '#f59e0b',
         tableColumnName: '款式',
         tableColumnValueOne: '均价'
@@ -84,7 +84,7 @@ export const staticMenuList = [
         pagePath: 'analysis/AnalysisFabricPrice',
         icon: 'grid',
         apiUrl: '/analysis/fabric-price',
-        chartType: 'bar',
+        chartType: 'line',
         chartColor: '#8b5cf6',
         tableColumnName: '面料',
         tableColumnValueOne: '均价'
@@ -97,8 +97,8 @@ export const staticMenuList = [
         pagePath: 'analysis/AnalysisFitTypePrice',
         icon: 'data-analysis',
         apiUrl: '/analysis/fit-price',
-        chartType: 'bar',
-        chartColor: '#ef4444',
+        chartType: 'pie',
+        chartColor: '#f74b4b',
         tableColumnName: '版型',
         tableColumnValueOne: '均价'
       }

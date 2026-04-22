@@ -24,6 +24,7 @@
         :x-axis-name="finalXAxisName"
         :y-axis-name="finalYAxisName"
         :y-axis2-name="finalYAxis2Name"
+        @chart-click="handleChartClick"
         @refresh="refreshChart"
       />
     </div>
@@ -303,6 +304,46 @@ export default {
     },
     handleRefresh() {
       this.fetchData()
+    },
+    handleChartClick(params) {
+      if (!params || !params.name) {
+        return
+      }
+
+      if (this.apiUrl === '/category-sales/') {
+        this.$router.push({
+          path: '/analysis/detail-products',
+          query: {
+            field: 'category',
+            value: params.name,
+            title: this.title
+          }
+        })
+        return
+      }
+
+      if (this.apiUrl === '/analysis/province-sales') {
+        this.$router.push({
+          path: '/analysis/detail-products',
+          query: {
+            field: 'province',
+            value: params.name,
+            title: this.title
+          }
+        })
+        return
+      }
+
+      if (this.apiUrl === '/analysis/shop-sales') {
+        this.$router.push({
+          path: '/analysis/detail-products',
+          query: {
+            field: 'shop',
+            value: params.name,
+            title: this.title
+          }
+        })
+      }
     },
     handleDownload() {
       this.downloadData()

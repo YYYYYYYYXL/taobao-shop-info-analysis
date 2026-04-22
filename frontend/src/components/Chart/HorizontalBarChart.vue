@@ -4,6 +4,7 @@
     :height="height"
     :options="chartOptions"
     :theme="theme"
+    @chart-click="handleChartClick"
   />
 </template>
 
@@ -128,6 +129,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  methods: {
+    handleChartClick(params) {
+      this.$emit('chart-click', params)
     }
   }
 }

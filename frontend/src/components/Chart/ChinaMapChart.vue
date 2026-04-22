@@ -68,7 +68,7 @@ export default {
         },
         visualMap: {
           min: this.visualMapMin,
-          max: Math.max(...this.data.map(item => Number(item.value) || 0),0),
+          max: Math.max(...this.data.map(item => Number(item.value) || 0), 0),
           left: '5%',
           top: '5%',
           text: ['高', '低'],
@@ -109,6 +109,7 @@ export default {
   },
   beforeDestroy() {
     if (this.chart) {
+      this.chart.off('click', this.handleChartClick)
       this.chart.dispose()
     }
     window.removeEventListener('resize', this.handleResize)
@@ -125,12 +126,13 @@ export default {
   },
   methods: {
     initChart() {
-      // 注册地图
       echarts.registerMap(this.mapName, chinaMap)
-      
-      // 初始化图表
       this.chart = echarts.init(this.$refs.chartRef, this.theme)
       this.chart.setOption(this.chartOptions)
+      this.chart.on('click', this.handleChartClick)
+    },
+    handleChartClick(params) {
+      this.$emit('chart-click', params)
     },
     handleResize() {
       if (this.chart) {
@@ -140,3 +142,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.chart-content {
+  width: 100%;
+}
+</style>

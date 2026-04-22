@@ -54,6 +54,18 @@ const businessChildren = [
     name: 'AnalysisFitTypePrice',
     component: () => import('../views/analysis/AnalysisFitTypePrice.vue'),
     meta: { title: '版型价格分析' }
+  },
+  {
+    path: '/analysis/detail-products',
+    name: 'DetailProducts',
+    component: () => import('../views/analysis/DetailProducts.vue'),
+    meta: { title: '商品详情' }
+  },
+  {
+    path: '/analysis/category-products',
+    name: 'CategoryProducts',
+    component: () => import('../views/analysis/DetailProducts.vue'),
+    meta: { title: '分类商品详情' }
   }
 ]
 

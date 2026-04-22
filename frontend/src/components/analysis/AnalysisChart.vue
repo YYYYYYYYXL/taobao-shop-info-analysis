@@ -38,6 +38,7 @@
         :y-axis2-name="yAxis2Name"
         v-bind="finalChartProps"
         :theme="theme"
+        @chart-click="handleChartClick"
       />
     </div>
   </el-card>
@@ -213,6 +214,9 @@ export default {
   methods: {
     handleChartTypeChange(newType) {
       this.currentChartType = newType
+    },
+    handleChartClick(params) {
+      this.$emit('chart-click', params)
     },
     handleColorChange(newColor) {
       this.currentColor = newColor
